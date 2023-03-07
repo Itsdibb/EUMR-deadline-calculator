@@ -39,8 +39,10 @@ def add_business_days2(start_date, days_to_add):
         days_added += 1
     return current_date.strftime('(%A)')
 
+image = Image.open('Rhino.png')
+
 st.write("""
-# EUMR Deadlines Calculator App
+# EUMR Deadline Calculator App
 
 This app calculates EUMR merger deadlines!
 
@@ -61,3 +63,4 @@ st.write(f'Latest deadline (expiry of 125 working days)')
 st.write(f'If Phase I lasted 25 working days: :red[**{add_business_days(d, 150)}**] {add_business_days2(d, 150)}')
 st.write(f'If Phase I lasted 35 working days :red[**{add_business_days(d, 160)}**] {add_business_days2(d, 160)}')
 
+st.image(image, use_column_width=True)
