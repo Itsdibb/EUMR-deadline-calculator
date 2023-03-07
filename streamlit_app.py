@@ -6,7 +6,7 @@ from PIL import Image
 
 day = timedelta(days=1)
 
-df = pd.read_excel('EC_holidays.xlsx')
+df = pd.read_excel("EC_holidays.xlsx")
 df = df.drop(df[df.Holiday == 'Luxembourg National Day (Luxembourg)'].index)
 
 # create a function to check if a date is a holiday
@@ -39,9 +39,6 @@ def add_business_days2(start_date, days_to_add):
         days_added += 1
     return current_date.strftime('(%A)')
 
-image = Image.open('Rhino.png')
-
-
 st.write("""
 # EUMR Deadlines Calculator App
 
@@ -64,4 +61,3 @@ st.write(f'Latest deadline (expiry of 125 working days)')
 st.write(f'If Phase I lasted 25 working days: :red[**{add_business_days(d, 150)}**] {add_business_days2(d, 150)}')
 st.write(f'If Phase I lasted 35 working days :red[**{add_business_days(d, 160)}**] {add_business_days2(d, 160)}')
 
-st.image(image, use_column_width=True)
