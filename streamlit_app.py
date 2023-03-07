@@ -6,7 +6,7 @@ from PIL import Image
 
 day = timedelta(days=1)
 
-df = pd.read_excel(r'EC_holidays.xlsx')
+df = pd.read_excel('EC_holidays.xlsx')
 df = df.drop(df[df.Holiday == 'Luxembourg National Day (Luxembourg)'].index)
 
 # create a function to check if a date is a holiday
