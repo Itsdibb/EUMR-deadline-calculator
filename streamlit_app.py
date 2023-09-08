@@ -6,10 +6,8 @@ from PIL import Image
 from io import BytesIO
 import os
 
-day = timedelta(days=1)
-
-# Replace 'your_project_key' with your actual Deta project key.
-DETA_API_KEY = os.getenv("DETA_API_KEY")
+# Read Deta API key
+DETA_API_KEY = st.secrets("DETA_API_KEY")
 
 if DETA_API_KEY is None:
     st.error("DETA_API_KEY not found")
@@ -23,6 +21,8 @@ file = drive.get("EC_holidays.xlsx")
 # Read the file's content into a Pandas DataFrame
 df = pd.read_excel(BytesIO(file.read()))
 df = df.drop(df[df.Holiday == 'Luxembourg National Day (Luxembourg)'].index)
+
+day = timedelta(days=1)
 
 # create a function to check if a date is a holiday
 def is_holiday(date):
