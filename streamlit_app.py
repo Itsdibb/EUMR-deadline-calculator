@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 from deta import Deta
+from io import BytesIO
 
 # Replace 'your_project_key' with your actual Deta project key.
 deta = Deta('data_key')
