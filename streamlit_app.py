@@ -4,8 +4,8 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 from io import BytesIO
-from deta import Deta
 import os
+from deta import Deta
 
 # Read Deta API key
 DETA_API_KEY = st.secrets["DETA_API_KEY"]
