@@ -3,7 +3,6 @@ from datetime import datetime, date, timedelta
 import pandas as pd
 import numpy as np
 from PIL import Image
-import sys
 
 # Print Python version
 st.write(f"Python Version: {sys.version}")
