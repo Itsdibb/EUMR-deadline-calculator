@@ -3,10 +3,19 @@ from datetime import datetime, date, timedelta
 import pandas as pd
 import numpy as np
 from PIL import Image
+from io import BytesIO
 
 day = timedelta(days=1)
 
-df = pd.read_excel("EC_holidays.xlsx")
+# Replace 'your_project_key' with your actual Deta project key.
+deta = Deta('a05n6m237pg_eAeKLR4a87uSMGwSqUnK4J17ViG8F7ES')
+drive = deta.Drive("Data")
+
+# Get the file from Deta Drive
+file = drive.get("EC_holidays.xlsx")
+
+# Read the file's content into a Pandas DataFrame
+df = pd.read_excel(BytesIO(file.read()))
 df = df.drop(df[df.Holiday == 'Luxembourg National Day (Luxembourg)'].index)
 
 # create a function to check if a date is a holiday
