@@ -7,7 +7,7 @@ from io import BytesIO
 import os
 
 # Read Deta API key
-DETA_API_KEY = st.secrets("DETA_API_KEY")
+DETA_API_KEY = st.secrets["DETA_API_KEY"]
 
 if DETA_API_KEY is None:
     st.error("DETA_API_KEY not found")
