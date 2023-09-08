@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 import sys
+from deta import Deta
 
 # Print Python version
 st.write(f"Python Version: {sys.version}")
