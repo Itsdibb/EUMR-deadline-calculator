@@ -7,7 +7,7 @@ from deta import Deta
 from io import BytesIO
 
 # Replace 'your_project_key' with your actual Deta project key.
-deta = Deta('data_key')
+deta = Deta('a05n6m237pg_eAeKLR4a87uSMGwSqUnK4J17ViG8F7ES')
 
 # Name your drive
 drive = deta.Drive("Data")
