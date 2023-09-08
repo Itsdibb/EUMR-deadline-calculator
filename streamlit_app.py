@@ -3,6 +3,21 @@ from datetime import datetime, date, timedelta
 import pandas as pd
 import numpy as np
 from PIL import Image
+from deta import Deta
+import sys
+
+# Print Python version
+st.write(f"Python Version: {sys.version}")
+
+# Print installed packages
+st.write("Installed Packages:")
+for package in sys.modules:
+    st.write(package)
+
+# Print sys.path
+st.write("sys.path:")
+for path in sys.path:
+    st.write(path)
 
 # Replace 'your_project_key' with your actual Deta project key.
 deta = Deta('a05n6m237pg_eAeKLR4a87uSMGwSqUnK4J17ViG8F7ES')
