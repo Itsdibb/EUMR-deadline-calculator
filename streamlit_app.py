@@ -4,12 +4,18 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 from io import BytesIO
+import os
 
 day = timedelta(days=1)
 
 # Replace 'your_project_key' with your actual Deta project key.
-deta = Deta('a05n6m237pg_eAeKLR4a87uSMGwSqUnK4J17ViG8F7ES')
-drive = deta.Drive("Data")
+DETA_API_KEY = os.getenv("DETA_API_KEY")
+
+if DETA_API_KEY is None:
+    st.error("DETA_API_KEY not found")
+else:
+    deta = Deta(DETA_API_KEY)
+    drive = deta.Drive("Data")
 
 # Get the file from Deta Drive
 file = drive.get("EC_holidays.xlsx")
