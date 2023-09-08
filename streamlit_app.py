@@ -12,10 +12,13 @@ deta = Deta('data_key')
 # Name your drive
 drive = deta.Drive("Data")
 
-day = timedelta(days=1)
+# Get the file from Deta Drive
+file = drive.get("EC_holidays.xlsx")
 
 df = pd.read_excel(BytesIO(file.read()))
 df = df.drop(df[df.Holiday == 'Luxembourg National Day (Luxembourg)'].index)
+
+day = timedelta(days=1)
 
 # create a function to check if a date is a holiday
 def is_holiday(date):
