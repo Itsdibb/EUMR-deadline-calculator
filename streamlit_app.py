@@ -3,6 +3,7 @@ from datetime import datetime, date, timedelta
 import pandas as pd
 import numpy as np
 from PIL import Image
+from deta import Deta
 
 day = timedelta(days=1)
 
