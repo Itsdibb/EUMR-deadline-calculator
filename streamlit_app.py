@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 from io import BytesIO
+from deta import Deta
 import os
 
 # Read Deta API key
