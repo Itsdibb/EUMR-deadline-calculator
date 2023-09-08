@@ -3,21 +3,7 @@ from datetime import datetime, date, timedelta
 import pandas as pd
 import numpy as np
 from PIL import Image
-import sys
 from deta import Deta
-
-# Print Python version
-st.write(f"Python Version: {sys.version}")
-
-# Print installed packages
-st.write("Installed Packages:")
-for package in sys.modules:
-    st.write(package)
-
-# Print sys.path
-st.write("sys.path:")
-for path in sys.path:
-    st.write(path)
 
 # Replace 'your_project_key' with your actual Deta project key.
 deta = Deta('data_key')
@@ -27,7 +13,7 @@ drive = deta.Drive("Data")
 
 day = timedelta(days=1)
 
-df = pd.read_excel("EC_holidays.xlsx")
+df = pd.read_excel(BytesIO(file.read()))
 df = df.drop(df[df.Holiday == 'Luxembourg National Day (Luxembourg)'].index)
 
 # create a function to check if a date is a holiday
