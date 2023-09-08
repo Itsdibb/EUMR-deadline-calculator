@@ -1,3 +1,4 @@
+from deta import Deta
 import streamlit as st
 from datetime import datetime, date, timedelta
 import pandas as pd
@@ -5,7 +6,7 @@ import numpy as np
 from PIL import Image
 from io import BytesIO
 import os
-from deta import Deta
+
 
 # Read Deta API key
 DETA_API_KEY = st.secrets["data_key"]
