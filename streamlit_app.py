@@ -9,7 +9,7 @@ import os
 day = timedelta(days=1)
 
 # Replace 'your_project_key' with your actual Deta project key.
-DETA_API_KEY = os.getenv(DETA_API_KEY)
+DETA_API_KEY = os.getenv("DETA_API_KEY")
 
 if DETA_API_KEY is None:
     st.error("DETA_API_KEY not found")
